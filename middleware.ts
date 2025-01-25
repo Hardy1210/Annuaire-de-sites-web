@@ -1,3 +1,2 @@
-//intermediaire de redirection 
-export { auth as middleware } from "@/lib/auth";
-
+//intermediaire de redirection
+export { auth as middleware } from '@/lib/auth'

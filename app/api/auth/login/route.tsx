@@ -1,4 +1,6 @@
-import { NextResponse } from 'next/server';
+{
+  /*
+  import { NextResponse } from 'next/server';
 import bcrypt from 'bcrypt';
 import { prisma } from '@/lib/prisma';
 import jwt from 'jsonwebtoken';
@@ -39,4 +41,6 @@ export async function POST(req: Request) {
     console.error(error);
     return NextResponse.json({ error: 'Something went wrong.' }, { status: 500 });
   }
+}
+   */
 }
