@@ -4,6 +4,8 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { cn } from '@/lib/utils'
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 //import para auth
 import { signIn } from 'next-auth/react'
 
@@ -11,11 +13,31 @@ export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<'div'>) {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
+  const router = useRouter()
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+
+    const result = await signIn('credentials', {
+      redirect: false,
+      email,
+      password,
+    })
+
+    if (result?.error) {
+      setError(result.error)
+    } else {
+      router.push('/user-dashboard')
+    }
+  }
   return (
     <div className={cn('flex flex-col gap-6', className)} {...props}>
       <Card className="overflow-hidden">
         <CardContent className="grid p-0 md:grid-cols-2">
-          <form className="p-6 md:p-8">
+          <form onSubmit={handleSubmit} className="p-6 md:p-8">
             <div className="flex flex-col gap-6">
               <div className="flex flex-col items-center text-center">
                 <h1 className="text-2xl font-bold">Welcome</h1>
@@ -23,6 +45,7 @@ export function LoginForm({
                   Login to your Acme Inc account
                 </p>
               </div>
+              {error && <p>{error}</p>}
               <div className="grid gap-2">
                 <Label htmlFor="email">Email</Label>
                 <Input
@@ -30,6 +53,8 @@ export function LoginForm({
                   type="email"
                   placeholder="m@example.com"
                   required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div className="grid gap-2">
@@ -42,7 +67,13 @@ export function LoginForm({
                     Forgot your password?
                   </a>
                 </div>
-                <Input id="password" type="password" required />
+                <Input
+                  id="password"
+                  type="password"
+                  required
+                  onChange={(e) => setPassword(e.target.value)}
+                  value={password}
+                />
               </div>
               <Button type="submit" className="w-full">
                 Login
