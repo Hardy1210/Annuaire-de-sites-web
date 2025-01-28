@@ -32,6 +32,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      lucide:
+        specifier: ^0.474.0
+        version: 0.474.0
       lucide-react:
         specifier: ^0.473.0
         version: 0.473.0(react@18.3.1)
@@ -56,6 +59,9 @@ importers:
       tailwindcss-animate:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@3.4.17)
+      zod:
+        specifier: ^3.24.1
+        version: 3.24.1
     devDependencies:
       '@types/bcrypt':
         specifier: ^5.0.2
@@ -1258,6 +1264,9 @@ packages:
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
+  lucide@0.474.0:
+    resolution: {integrity: sha512-2rfORNh9fzhCUKu0ciE48ogR1Zg7hleABLO5MBF06vOb4esTtE8FbfQJiC+wveiNFoeojWKz6zXheUToRR5uIg==}
+
   make-dir@3.1.0:
     resolution: {integrity: sha512-g3FeP20LNwhALb/6Cz6Dd4F2ngze0jz7tbzrD2wAV+o9FeNHe4rL+yK2md0J/fiSf1sa1ADhXqi5+oVwOM/eGw==}
     engines: {node: '>=8'}
@@ -1945,6 +1954,9 @@ packages:
   yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+
+  zod@3.24.1:
+    resolution: {integrity: sha512-muH7gBL9sI1nciMZV67X5fTKKBLtwpZ5VBp1vsOQzj1MhrBZ4wlVCm3gedKZWLp0Oyel8sIGfeiz54Su+OVT+A==}
 
 snapshots:
 
@@ -3300,6 +3312,8 @@ snapshots:
     dependencies:
       react: 18.3.1
 
+  lucide@0.474.0: {}
+
   make-dir@3.1.0:
     dependencies:
       semver: 6.3.1
@@ -4058,3 +4072,5 @@ snapshots:
   yaml@2.7.0: {}
 
   yocto-queue@0.1.0: {}
+
+  zod@3.24.1: {}

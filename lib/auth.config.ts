@@ -5,6 +5,7 @@ import Google from 'next-auth/providers/google'
 //config pour github et google
 export default {
   providers: [
+    //config pour github et google
     GitHub({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,

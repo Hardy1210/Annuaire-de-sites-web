@@ -1,13 +1,20 @@
-'use client';   
-
-import { signIn } from 'next-auth/react';
+'use client'
+//attention cest du code duplique juste pour faire des testes
+import { signIn } from 'next-auth/react'
 //buttons pour connction avec github et google pense a bien depalce cette composant pour le faire fonctioner avec une librerie
 const Login = () => {
   return (
     <div>
-      <button onClick={() => signIn("github", { redirectTo: "/user-dashboard"})}>Sign In with GitHub</button>
-      <button onClick={() => signIn("google", { redirectTo: "/user-dashboard"})}>Sign In with Google</button>
-    
+      <button
+        onClick={() => signIn('github', { redirectTo: '/user-dashboard' })}
+      >
+        Sign In with GitHub
+      </button>
+      <button
+        onClick={() => signIn('google', { redirectTo: '/user-dashboard' })}
+      >
+        Sign In with Google
+      </button>
     </div>
   )
 }
